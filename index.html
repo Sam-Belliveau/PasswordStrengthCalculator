@@ -2,10 +2,41 @@
 <html>
     <head>
         <title> Password Strength Calculator </title>
+        <link rel="stylesheet" href="styles.css">
+
+        <script src="scripts/probabilities.js"></script>
+        <script src="scripts/strength_calculator.js"></script>
+
+        <script>
+            function updateStrength() {
+                password = document.getElementById("password-input").value
+                strength = getPasswordStrength(password)
+                document.getElementById("password-strength").innerHTML = strength
+            }
+        </script>
     </head>
 
     <body>
-        <script src="scripts/probabilities.js"></script>
-        <script src="scripts/strength_calculator.js"></script>
+        <header>
+            <h1> Password Strength Calculator </h1>
+            <b> Created By Sam Belliveau (2020) </b>
+        </header>
+
+        <article>
+            <form id="password-form">
+                <b>Enter Password: </b> <br>
+                <input id="password-input" oninput="updateStrength()">
+            </form>
+            
+            <br/>
+            <b>Raw Password Strength:</b>
+            <p id='password-strength'> N/A </p>
+        </article>
+
+        <footer>
+
+        </footer>
+
+
     </body>
 </html>

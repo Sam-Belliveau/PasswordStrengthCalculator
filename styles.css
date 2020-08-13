@@ -1,0 +1,23 @@
+header {
+    background-color: palegreen;
+
+    padding: 10px;
+
+    border-style: solid;
+    border-color: black;
+    border-width: 4px;
+
+    text-align: center;
+}
+
+article {
+    background-color: powderblue;
+
+    padding: 10px;
+
+    border-style: solid;
+    border-color: black;
+    border-width: 4px;
+
+    text-align: center;
+}
