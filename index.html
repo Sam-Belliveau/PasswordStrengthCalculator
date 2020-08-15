@@ -11,7 +11,7 @@
             function updateStrength() {
                 password = document.getElementById("password-input").value
                 strength = getPasswordStrength(password)
-                document.getElementById("password-strength").innerHTML = strength + " bits"
+                document.getElementById("password-strength").innerHTML = Math.round(strength) + " bits"
             }
         </script>
     </head>
