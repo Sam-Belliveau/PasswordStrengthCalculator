@@ -1,7 +1,7 @@
 
 function getLetterStrength(letter) {
     let prob = PASSWORD_LET_PROBS[letter]
-    let strength = Math.log1p(1.0 / prob)
+    let strength = Math.log(1.0 / prob) / Math.log(2.0)
     return strength
 }
 
