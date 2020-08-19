@@ -10,8 +10,12 @@
         <script>
             function updateStrength() {
                 password = document.getElementById("password-input").value
-                strength = getPasswordStrength(password)
-                document.getElementById("password-strength").innerHTML = Math.round(strength) + " bits"
+                entropy = (getPasswordEntropy(password) * 100).toFixed(3)
+                rawstrength = Math.round(getPasswordRawBits(password))
+                strength = Math.round(getPasswordBits(password))
+                document.getElementById("password-entropy").innerHTML = entropy + "%"
+                document.getElementById("password-strength").innerHTML = strength + " bits"
+                document.getElementById("password-raw-strength").innerHTML = rawstrength + " bits"
             }
         </script>
     </head>
@@ -29,8 +33,12 @@
             </form>
             
             <br/>
-            <b>Raw Password Strength:</b>
+            <b>Password Entropy:</b>
+            <p id='password-entropy'> N/A </p>
+            <b>Password Strength:</b>
             <p id='password-strength'> N/A </p>
+            <b>Raw Password Strength:</b>
+            <p id='password-strength-raw'> N/A </p>
         </article>
 
         <footer>
