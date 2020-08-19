@@ -15,7 +15,7 @@
                 strength = Math.round(getPasswordBits(password))
                 document.getElementById("password-entropy").innerHTML = entropy + "%"
                 document.getElementById("password-strength").innerHTML = strength + " bits"
-                document.getElementById("password-raw-strength").innerHTML = rawstrength + " bits"
+                document.getElementById("password-strength-raw").innerHTML = rawstrength + " bits"
             }
         </script>
     </head>
@@ -35,7 +35,7 @@
             <br/>
             <b>Password Entropy:</b>
             <p id='password-entropy'> N/A </p>
-            <b>Password Strength:</b>
+            <b>Adjusted Password Strength:</b>
             <p id='password-strength'> N/A </p>
             <b>Raw Password Strength:</b>
             <p id='password-strength-raw'> N/A </p>

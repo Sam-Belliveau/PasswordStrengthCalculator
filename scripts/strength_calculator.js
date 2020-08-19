@@ -9,7 +9,7 @@ function getPasswordRawBits(password) {
     let total = 0.0
     
     for(let letter of password) {
-        total += getLetterStrength(letter)
+        total += getLetterBits(letter)
     }
     
     return total
@@ -32,18 +32,12 @@ function getPasswordEntropy(password) {
     entropy = 0
     for(let letter in freqCount) {
         freq = freqCount[letter] / length
-        entropy += freq * Math.log2(freq)
+        entropy -= freq * Math.log2(freq)
     }
 
     return entropy
 }
 
 function getPasswordBits(password) {
-    let total = 0.0
-    
-    for(let letter of password) {
-        total += getLetterStrength(letter)
-    }
-    
-    return total * getPasswordEntropy(password)
+    return getPasswordRawBits(password) * getPasswordEntropy(password)
 }
