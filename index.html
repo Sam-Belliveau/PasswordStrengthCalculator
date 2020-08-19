@@ -9,10 +9,12 @@
 
         <script>
             function updateStrength() {
-                password = document.getElementById("password-input").value
-                entropy = (getPasswordEntropy(password) * 100).toFixed(3)
-                rawstrength = Math.round(getPasswordRawBits(password))
-                strength = Math.round(getPasswordBits(password))
+                let password = document.getElementById("password-input").value
+
+                let entropy = (getPasswordEntropy(password) * 100).toPrecision(3)
+                let rawstrength = Math.round(getPasswordRawBits(password))
+                let strength = Math.round(getPasswordBits(password))
+
                 document.getElementById("password-entropy").innerHTML = entropy + "%"
                 document.getElementById("password-strength").innerHTML = strength + " bits"
                 document.getElementById("password-strength-raw").innerHTML = rawstrength + " bits"
